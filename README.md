@@ -1,6 +1,7 @@
-# viva_aranzazu
+# Viva Aranzazu!
 
-A new Flutter project.
+Diocesan Shrine and Parish of Nuestra Se&amp;ora de Aranzazu | Media and Public Information Ministry
+
 
 ## Getting Started
 
@@ -14,3 +15,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.dev/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
+
+### To Do
+
+Update this readme.
