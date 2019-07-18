@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'data_models/UpdatesModel.dart';
 import 'package:http/http.dart' as http;
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 void main() => runApp(UpdatesScreen());
 
@@ -107,16 +108,59 @@ class NewsList extends StatelessWidget {
       itemCount: news.length,
       physics: const AlwaysScrollableScrollPhysics(),
       shrinkWrap: true,
-      padding: const EdgeInsets.only(left: 20.5, right: 20.5, top: 26),
+      padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
       itemBuilder: (context, index) {
         return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Image.network(
-              news[index].thumbnail,
-              width: 320,
-              height: 150,
-              fit: BoxFit.cover,
+            ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.network(
+                  news[index].thumbnail,
+                  width: double.infinity,
+                  height: 150,
+                  fit: BoxFit.cover,
+                )),
+            SizedBox(
+              height: 5,
             ),
+            Text(
+              news[index].title,
+              style: TextStyle(
+                  fontFamily: 'Roboto',
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold),
+            ),
+            Text(
+              news[index].excerpt,
+              style: TextStyle(
+                  fontFamily: 'Roboto',
+                  fontSize: 11,
+                  fontWeight: FontWeight.w300,
+                  color: Color(0xff737474)),
+            ),
+            SizedBox(height: 7.0),
+            Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    timeago.format(DateTime.parse(news[index].date)),
+                    style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 9.5,
+                        fontWeight: FontWeight.w300,
+                        color: Color(0xff737474)),
+                  ),
+                  Spacer(),
+                  Icon(
+                    Icons.more_vert,
+                    color: Color(0xff737474),
+                    size: 17,
+                  )
+                ]),
+            SizedBox(
+              height: 20,
+            )
           ],
         );
       },
