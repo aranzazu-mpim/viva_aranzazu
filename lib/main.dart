@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dashboard/updates.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LayoutStarts(),
+      home: UpdatesScreen(),
     );
   }
 }
@@ -23,7 +24,7 @@ class _LayoutStartsState extends State<LayoutStarts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // TODO: IMPORT ANY SCREEN YOU WANT TO TEST
-    );
+        // TODO: IMPORT ANY SCREEN YOU WANT TO TEST
+        );
   }
 }
