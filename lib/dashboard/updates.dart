@@ -115,10 +115,10 @@ class NewsList extends StatelessWidget {
           children: <Widget>[
             ClipRRect(
                 borderRadius: BorderRadius.circular(15),
-                child: Image.network(
-                  news[index].thumbnail,
+                child: Image(
+                  image: CachedNetworkImageProvider(news[index].thumbnail),
                   width: double.infinity,
-                  height: 150,
+                  height: 200,
                   fit: BoxFit.cover,
                 )),
             SizedBox(
