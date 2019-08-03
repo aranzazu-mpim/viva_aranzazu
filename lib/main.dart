@@ -1,30 +1,15 @@
 import 'package:flutter/material.dart';
-import 'dashboard/updates.dart';
+import 'package:viva_aranzazu/data/model/ui/search/search_page.dart';
+import 'package:viva_aranzazu/injection_container.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  initKiwi();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  //TODO: IMPLEMENT PAGE NAVIGATION
-  //TODO: IMPLEMENT A CHECK IF USER IS LOGGED IN
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LayoutStarts(),
-    );
-  }
-}
-
-class LayoutStarts extends StatefulWidget {
-  @override
-  _LayoutStartsState createState() => _LayoutStartsState();
-}
-
-class _LayoutStartsState extends State<LayoutStarts> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        // TODO: IMPORT ANY SCREEN YOU WANT TO TEST
-        );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: SearchPage());
   }
 }
